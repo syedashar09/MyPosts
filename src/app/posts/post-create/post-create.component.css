@@ -1,0 +1,41 @@
+mat-card {
+  width: 100%;
+  justify-content: center;
+  font-family: monospace;
+  background-color: #CCEA8D;
+  border-radius: 10px;
+}
+
+mat-form-field,
+input,
+textarea {
+  margin-left: 20px;
+  width: 68%;
+}
+
+mat-card-title {
+  text-decoration: solid;
+  font-size: large;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-family: monospace;
+}
+
+save-button {
+  background-color: aqua;
+}
+
+#button {
+  font-size: 1.2rem;
+  justify-content: baseline;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+div.image-upload {
+  margin: 1rem 2rem;
+}
+
+input.image-upload {
+  visibility: hidden;
+}

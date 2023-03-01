@@ -1,1 +1,18 @@
-<p>post-list works!</p>
+<mat-progress-spinner *ngIf="isLoading"></mat-progress-spinner>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      {{ post?.title }}
+    </mat-expansion-panel-header>
+    <p>{{ post?.content }}</p>
+    <mat-action-row>
+      <a mat-button [routerLink]="['/edit', post.id]" color="primary">EDIT</a>
+      <button mat-button (click)="OnDelete(post.id)" color="warn">
+        DELETE
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">
+  No posts added yet!
+</p>

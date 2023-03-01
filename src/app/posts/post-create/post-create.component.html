@@ -1,1 +1,99 @@
-<p>post-create works!</p>
+<div fxLayoutAlign="center" fxFlexFill class="main-div">
+  <mat-card color="primary" fxFlex="50">
+    <mat-card-title>
+      <span>Create A Post !</span>
+    </mat-card-title>
+    <form [formGroup]="myform" (ngSubmit)="OnSavepost()">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="title"
+          placeholder="Post Title"
+          required
+        />
+      </mat-form-field>
+      <mat-error *ngIf="title.invalid && (title.touched || title.dirty)">
+        Please enter a post title.
+      </mat-error>
+      <div class="image-upload">
+        <button class="upload btn btn-primary" (click)="filePicker.click()">
+          Upload Image
+        </button>
+        <input
+          class="image-upload"
+          type="file"
+          #filePicker
+          (change)="OnImagePicked($event)"
+        />
+      </div>
+      <mat-form-field>
+        <textarea
+          matInput
+          type="textarea"
+          formControlName="content"
+          placeholder="Post Content"
+        ></textarea>
+        <div>
+          <mat-error
+            *ngIf="
+              title.invalid &&
+              (myform.get('content')?.touched || myform.get('content')?.dirty)
+            "
+          >
+            Please enter a post content.</mat-error
+          >
+          <!-- <mat-error *ngIf="content.error?.['minlength']"
+            >content minlength is 10</mat-error
+          > -->
+        </div>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        [disabled]="myform.invalid"
+        color="accent"
+        type="submit"
+      >
+        Save Post
+      </button>
+    </form>
+    <!-- <form (ngSubmit)="OnSavepost(postForm)" id="ngForm" #postForm="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="title"
+          [ngModel]="post?.title"
+          placeholder="Post Title"
+          #title="ngModel"
+        />
+        <mat-error>
+         
+          >Please enter a post title.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          type="textarea"
+          name="content"
+          [ngModel]="post?.content"
+          placeholder="Post Content"
+          #content="ngModel"
+        ></textarea>
+        <mat-error>Please enter a post content.</mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        id="button"
+        color="accent"
+        type="submit"
+        form="ngForm"
+      >
+        Save Post
+      </button>
+    </form> -->
+  </mat-card>
+  <p>Form Value: {{ myform.value | json }}</p>
+  <p>form status :{{ myform.status }}</p>
+</div>
