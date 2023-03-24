@@ -1,3 +1,35 @@
-mat-progress-spinner {
+mat-spinner {
     margin: auto;
+    text-align: center;
+
+}
+
+.postLists {
+    margin: auto;
+    width: 90%;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+.post-image {
+    width: 50%;
+    height: 50%;
+    margin: 12px
+}
+
+.post-image img {
+    width: 100%;
+    box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, .5);
+}
+
+mat-paginator {
+    margin-top: 20px;
+    margin-right: 40px
+}
+
+.info-text {
+    /* justify-content: center; */
+    text-align: center;
+    margin: auto;
+
 }

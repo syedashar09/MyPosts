@@ -1,0 +1,27 @@
+<mat-spinner [diameter]="80" *ngIf="isLoading"></mat-spinner>
+<div fxLayoutAlign="center" fxFlexFill class="main-div" *ngIf="!isLoading">
+	<mat-card color="primary" fxFlex="50">
+		<mat-card-title>
+			<span>LogIn</span>
+		</mat-card-title>
+
+		<form (submit)="OnLogin(loginForm)" #loginForm="ngForm">
+			<mat-form-field>
+				<input matInput type="email" name="email" ngModel #emailInput="ngModel" placeholder="Email" required />
+			</mat-form-field>
+			<!-- <div class="alert alert-danger" *ngIf="title.invalid && (title.touched || title.dirty)">
+				<mat-error *ngIf="title.errors.required">this is a required field</mat-error>
+				<mat-error *ngIf="title.errors.minlength">Min length is 7</mat-error>
+			</div> -->
+
+			<mat-form-field>
+				<input matInput type="password" name="password" ngModel #passwordInput="ngModel" placeholder="Password" />
+			</mat-form-field>
+			<!-- <div class="alert alert-danger" *ngIf="content.invalid && (content.touched || content.dirty)">
+				<mat-error *ngIf="content.errors.required">this is a required field</mat-error>
+				<mat-error *ngIf="content.errors.minlength">Min length is 10</mat-error>
+			</div> -->
+			<button class="save-button" mat-raised-button color="primary" type="submit"> LogIn</button>
+		</form>
+	</mat-card>
+</div>

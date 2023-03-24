@@ -1,7 +1,11 @@
 const http = require("http");
+// const path = require("path");
+require("dotenv").config();
+// path.resolve(process.cwd(), ".env");
+
 const app = require("./backend/app");
 
-port = process.env.port || 3000;
+port = process.env.port || process.env.API_PORT;
 
 app.set("port", port);
 

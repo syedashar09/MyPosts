@@ -1,0 +1,43 @@
+html,
+body {
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   min-height: 100vh;
+}
+
+mat-card {
+   width: 60%;
+   margin: auto;
+   margin-top: 50px;
+   justify-content: center;
+   font-family: monospace;
+   background-color: #8dd1ea;
+   border-radius: 10px;
+   box-shadow: 0px 4px 7px -1px rgb(0, 0, 0, 0.3), 0px 8px 13px 0.5px rgb(0, 0, 0, 0.16), 0px 2px 20px 0.5px rgb(0, 0, 0, 0.11);
+}
+
+mat-card-title {
+
+   margin: 20px 0;
+   color: rgb(0, 0, 0, 0.5);
+   margin-left: 20px;
+}
+
+mat-form-field {
+   width: 100%;
+
+}
+
+mat-form-field,
+input {
+   width: 68%;
+   margin-left: 20px;
+
+}
+
+button {
+   margin: 20px;
+}
