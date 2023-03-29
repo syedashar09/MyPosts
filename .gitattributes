@@ -1,4 +1,3 @@
-*.html linguist-detectable=true
-*.css linguist-detectable=true
+
 *.typeScript linguist-detectable=true
-*.nodejs linguist-detectable=true
+*.javaScript linguist-detectable=true
