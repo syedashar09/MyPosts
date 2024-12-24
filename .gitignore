@@ -1,0 +1,108 @@
+# OS
+
+.angular/
+dist/
+
+public/uploads/ # Ignoring user uploads is crucial for security and size
+data/
+
+# Logs
+logs/
+*.log
+
+# Build files
+dist/
+build/
+tmp/
+out/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Package Manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.code-workspace
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Environment Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# ===========
+.DS_Store
+ehthumbs.db
+Thumbs.db
+.env
+TODO.md
+mongodb.conf
+
+# Node and related ecosystem
+# ==========================
+.nodemon
+.nodemonignore
+.sass-cache/
+node_modules/
+public/lib/
+app/tests/coverage/
+.bower-*/
+.idea/
+coverage/
+data
+
+# Sublime editor
+# ==============
+.sublime-project
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse project files
+# =====================
+.project
+.settings/
+.*.md.html
+.metadata
+*~.nib
+local.properties
+
+# IntelliJ
+# ========
+*.iml
+
+# Cloud9 IDE
+# =========
+.c9/
+data/
+mongodb.conf
+
+# Visual Studio
+# =========
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Courtesy of https://github.com/meanjs/mean/blob/master/.gitignore
+__temp__ca.pem
+backend/nodemon.json
+src/environments/environment.prod.ts
+src/environments/environment.prod.ts
