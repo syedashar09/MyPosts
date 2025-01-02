@@ -1,0 +1,42 @@
+<div class="main">
+  <div class="immersive-image">
+    <img
+      src="../../assets/secondImage.jpg"
+      alt="Main Image"
+      class="main-image"
+    />
+    <div class="text-overlay">
+      <h1 class="main-heading">Discover Stories That Inspire and Inform</h1>
+      <p class="subheading">
+        Your gateway to insightful articles, stunning visuals, and a world of
+        ideas at your fingertips.
+      </p>
+    </div>
+  </div>
+  <div class="blog-posts">
+    <div class="blog-txt">
+      <h1>blogs</h1>
+      <h2>Latest Stories and Insights</h2>
+      <p>Explore our latest posts and captivating visuals.</p>
+    </div>
+    <mat-spinner
+      [diameter]="50"
+      color="primary"
+      *ngIf="isLoading"
+    ></mat-spinner>
+    <div class="blog-card" *ngIf="posts.length > 0 && !isLoading">
+      <mat-card class="img-card" appearence="raised" *ngFor="let post of posts">
+        <mat-card-header>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="post?.imagePath" [alt]="post.title" />
+        <mat-card-content>
+          {{ post.content }}
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button>see more</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

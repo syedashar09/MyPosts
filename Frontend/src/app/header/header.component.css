@@ -1,14 +1,17 @@
 a {
   text-decoration: none;
   color: white;
-
 }
 
 .spacer {
   flex: 1 1 auto;
-
 }
-
+mat-toolbar img {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin-left: 20px;
+}
 ul {
   list-style: none;
   display: flex;
@@ -24,15 +27,23 @@ mat-toolbar {
   left: 0;
   right: 0;
   z-index: 2;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  box-shadow:
+    0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12);
 }
 
 .routerActive {
-  background-color: rgb(96, 71, 7);
-  border-radius: 10px;
+  background-color: rgb(33, 120, 192);
+  border-radius: 5px;
 }
 
 .mypost {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
-
+  box-shadow:
+    0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12);
+}
+mat-icon {
+  z-index: 3;
 }

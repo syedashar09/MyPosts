@@ -1,15 +1,39 @@
-<mat-toolbar color="warn">
-	<span><a routerLink="/" mat-button [routerLinkActive]="['mypost']">My Posts</a></span>
-	<span class="spacer"></span>
+<mat-toolbar color="primary">
+  <a routerLink="/home">
+    <img clss="logo" src="../../assets/yes.svg" /> Code Blog
+    <!-- <mat-icon fontIcon="home"></mat-icon> -->
+  </a>
 
-	<ul>
-		<li *ngIf="userIsAuthenticated"><a routerLink="/create" [routerLinkActive]="['routerActive']" mat-button> Create
-				New posts</a>
-		</li>
-		<li *ngIf="!userIsAuthenticated"><a routerLink="/login" mat-button [routerLinkActive]="['routerActive']">
-				Login</a></li>
-		<li *ngIf="!userIsAuthenticated"><a routerLink="/signup" mat-button [routerLinkActive]="['routerActive']">
-				Signup</a></li>
-		<li *ngIf="userIsAuthenticated"> <button mat-button (click)="logOut()"> LogOut</button></li>
-	</ul>
+  <span class="spacer"></span>
+
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a routerLink="/postList" [routerLinkActive]="['routerActive']"
+        >All Blogs</a
+      >
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <a routerLink="/create" [routerLinkActive]="['routerActive']" mat-button>
+        Create New posts</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/home" mat-button [routerLinkActive]="['routerActive']">
+        Home</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/login" mat-button [routerLinkActive]="['routerActive']">
+        Login</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/signup" mat-button [routerLinkActive]="['routerActive']">
+        Signup</a
+      >
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="logOut()">LogOut</button>
+    </li>
+  </ul>
 </mat-toolbar>
