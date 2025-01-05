@@ -1,6 +1,8 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="header" [class.hidden]="isNavbarHidden" color="primary">
   <a routerLink="/home">
-    <img clss="logo" src="../../assets/yes.svg" /> Code Blog
+    <img clss="logo" src="../../assets/yes.svg" /><span class="mat-body-2"
+      >Code Blog</span
+    >
     <!-- <mat-icon fontIcon="home"></mat-icon> -->
   </a>
 
@@ -8,32 +10,52 @@
 
   <ul>
     <li *ngIf="userIsAuthenticated">
-      <a routerLink="/postList" [routerLinkActive]="['routerActive']"
-        >All Blogs</a
+      <a routerLink="/postList" [routerLinkActive]="['routerActive']">
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="all_inbox"></mat-icon
+          ><span class="mat-body-2"> All Posts </span>
+        </div></a
       >
     </li>
     <li *ngIf="userIsAuthenticated">
-      <a routerLink="/create" [routerLinkActive]="['routerActive']" mat-button>
-        Create New posts</a
+      <a routerLink="/create" [routerLinkActive]="['routerActive']">
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+          <span class="mat-body-2">Add post</span>
+        </div></a
       >
     </li>
     <li *ngIf="!userIsAuthenticated">
       <a routerLink="/home" mat-button [routerLinkActive]="['routerActive']">
-        Home</a
-      >
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="home"></mat-icon>
+          <span class="mat-body-2"> Home </span>
+        </div>
+      </a>
     </li>
     <li *ngIf="!userIsAuthenticated">
       <a routerLink="/login" mat-button [routerLinkActive]="['routerActive']">
-        Login</a
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="login"></mat-icon>
+          <span class="mat-body-2">Login</span>
+        </div></a
       >
     </li>
     <li *ngIf="!userIsAuthenticated">
       <a routerLink="/signup" mat-button [routerLinkActive]="['routerActive']">
-        Signup</a
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="person_add"></mat-icon>
+          <span class="mat-body-2">Signup</span>
+        </div></a
       >
     </li>
     <li *ngIf="userIsAuthenticated">
-      <button mat-button (click)="logOut()">LogOut</button>
+      <button mat-button (click)="logOut()">
+        <div class="links">
+          <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon
+          ><span class="mat-body-2">Logout</span>
+        </div>
+      </button>
     </li>
   </ul>
 </mat-toolbar>

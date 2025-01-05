@@ -1,14 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Rakkas&display=swap");
 
 html,
 body {
   height: 100%;
 }
-body {
+body,
+.mat-typography {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Faculty Glyphic", "Rakkas", serif;
+}
+h1.mat-display-1 {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  font-family: "Faculty Glyphic", serif;
+}
+h2.mat-display-2 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  font-family: "Faculty Glyphic", serif;
+}
+h3.mat-display-3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Faculty Glyphic", serif;
+}
+.mat-body-1 {
+  font-size: 24px !important;
+  font-weight: 400;
+  line-height: 30px;
+  font-family: "Rakkas" !important;
+}
+span.mat-body-2 {
+  font-size: 19px !important;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Rakkas" !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: "Rakkas";
+}

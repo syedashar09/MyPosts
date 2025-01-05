@@ -22,8 +22,8 @@ img.logo {
   display: flex;
   flex-direction: row;
 }
-span.copy {
-  margin-right: 530px;
+span#copy {
+  margin-right: 580px;
 }
 div.aboutus img {
   width: 50px;

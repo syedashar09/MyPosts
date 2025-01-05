@@ -1,58 +1,103 @@
 <mat-spinner [diameter]="80" *ngIf="isLoading"></mat-spinner>
 <div fxLayoutAlign="center" fxFlexFill class="main-div" *ngIf="!isLoading">
-	<mat-card color="primary" fxFlex="50">
-		<mat-card-title>
-			<span>Sign Up</span>
-		</mat-card-title>
+  <mat-card color="primary" fxFlex="50">
+    <mat-card-title>
+      <span class="mat-body-2">Sign Up</span>
+    </mat-card-title>
 
-		<form class="signUp" (submit)="OnSignup(signupForm)" #signupForm="ngForm">
-			<mat-form-field>
-				<input matInput type="email" name="email" ngModel #emailInput="ngModel" placeholder="Email" required />
-			</mat-form-field>
-			<mat-error *ngIf="(emailInput.touched || signupForm.submitted) && emailInput.errors?.['required']"
-				style="margin-left: 10px;margin-bottom: 5px;">Email is
-				Required</mat-error>
-			<div mat-content class="text-danger" *ngIf="emailInput.touched && emailInput.errors?.['email']">
-				Enter a valid email address
-			</div>
+    <form class="signUp" (submit)="OnSignup(signupForm)" #signupForm="ngForm">
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          name="email"
+          ngModel
+          #emailInput="ngModel"
+          placeholder="Email"
+          required
+        />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          (emailInput.touched || signupForm.submitted) &&
+          emailInput.errors?.['required']
+        "
+        style="margin-left: 10px; margin-bottom: 5px"
+        >Email is Required</mat-error
+      >
+      <div
+        mat-content
+        class="text-danger"
+        *ngIf="emailInput.touched && emailInput.errors?.['email']"
+      >
+        Enter a valid email address
+      </div>
 
-			<!-- <div
+      <!-- <div
 				class="alert alert-danger"
 				*ngIf="signupForm.email.invalid && (signupForm.email.touched || signupForm.email.dirty)">
 				<mat-error *ngIf="signupForm.email.errors.required">this is a required field</mat-error>
 				<mat-error *ngIf="signupForm.errors.minlength">Min length is 7</mat-error>
 			</div> -->
 
-			<mat-form-field>
-				<input matInput type="Text" name="username" ngModel #usernameInput="ngModel" placeholder="User Name" />
-			</mat-form-field>
-			<!-- <mat-error *ngIf="(usernameInput.touched || signupForm.submitted)&& usernameInput.errors?.['required']"
+      <mat-form-field>
+        <input
+          matInput
+          type="Text"
+          name="username"
+          ngModel
+          #usernameInput="ngModel"
+          placeholder="User Name"
+        />
+      </mat-form-field>
+      <!-- <mat-error *ngIf="(usernameInput.touched || signupForm.submitted)&& usernameInput.errors?.['required']"
 				style="margin-left: 10px;margin-bottom: 5px;">Enter a
 				Username</mat-error>
 			<mat-error *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">Please enter at least 5
 				letters</mat-error> -->
 
-			<!-- <div
+      <!-- <div
 				class="alert alert-danger"
 				*ngIf="signupForm.username.invalid && (signupForm.username.touched || signupForm.username.dirty)">
 				<mat-error *ngIf="signupForm.username.errors.required">this is a required field</mat-error>
 				<mat-error *ngIf="signupForm.errors.minlength">Min length is 7</mat-error>
 			</div> -->
 
-			<mat-form-field>
-				<input matInput type="password" name="password" ngModel #passwordInput="ngModel" placeholder="Password" />
-			</mat-form-field>
-			<mat-error *ngIf="(passwordInput.touched || signupForm.submitted)&& passwordInput.errors?.['required']">Enter
-				a Password</mat-error>
-			<mat-error *ngIf="passwordInput.errors?.['minlength']">Please enter at least 5 letters.</mat-error>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          name="password"
+          ngModel
+          #passwordInput="ngModel"
+          placeholder="Password"
+        />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          (passwordInput.touched || signupForm.submitted) &&
+          passwordInput.errors?.['required']
+        "
+        >Enter a Password</mat-error
+      >
+      <mat-error *ngIf="passwordInput.errors?.['minlength']"
+        >Please enter at least 5 letters.</mat-error
+      >
 
-			<!-- <div
+      <!-- <div
 				class="alert alert-danger"
 				*ngIf="signupForm.password.invalid && (signupForm.password.touched || signupForm.password.dirty)">
 				<mat-error *ngIf="signupForm.password.errors.required">this is a required field</mat-error>
 				<mat-error *ngIf="signupForm.password.errors.minlength">Min length is 10</mat-error>
 			</div> -->
-			<button class="save-button" mat-raised-button color="primary" type="submit"> SignUp</button>
-		</form>
-	</mat-card>
+      <button
+        class="save-button"
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        <span class="mat-body-2"> SignUp </span>
+      </button>
+    </form>
+  </mat-card>
 </div>

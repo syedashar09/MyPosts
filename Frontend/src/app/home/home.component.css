@@ -1,34 +1,31 @@
 /* Full-Width Image */
 .immersive-image {
-  position: relative;
   width: 100vw;
-  height: 60vh;
-  /* Full viewport height */
+  height: 90vh;
   overflow: hidden;
+  position: relative;
 }
 
 .immersive-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures the image covers the entire viewport proportionally */
   display: block;
-  position: absolute;
   top: 0;
   left: 0;
 }
 
 /* Text Overlay */
-.text-overlay {
+.immersive-txt {
+  z-index: 2;
+  display: inline-flex;
   position: absolute;
+  flex-direction: column;
   bottom: 20px;
-  /* Position text at the bottom of the viewport */
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.1);
-  /* Semi-transparent background for better readability */
+  left: 20%;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
   border-radius: 4px;
 }
@@ -47,31 +44,46 @@
 }
 
 .blog-posts {
-  margin-top: 40px;
-  margin-left: 15px;
-  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 5px;
 }
 
-.blog-txt {
+.blog-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
+  height: 11.5rem;
+  margin-bottom: 30px;
+  margin-left: 20px;
 }
-
+.blog-text h2,
+h3,
+p {
+  margin: 5px;
+  word-wrap: break-word;
+}
 .blog-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 8px;
+  gap: 12px;
+}
+
+mat-card {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0%), rgb(0 0 0 / 4%));
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 0.1);
 }
 mat-card img {
   max-width: 550px;
   max-height: 500px;
   object-fit: cover;
 }
-mat-card-content,
+mat-card-content h3,
 mat-card-title {
-  padding: 5px;
-  margin: 5px;
-  word-wrap: inherit;
+  padding-bottom: 5px;
+  font-size: 19px;
+}
+mat-card-title h3 {
+  font-weight: 600;
 }
