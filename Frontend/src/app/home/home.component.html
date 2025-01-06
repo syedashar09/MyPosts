@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [class.dark-theme]="isDarkMode">
   <div class="immersive-image">
     <img
       src="../../assets/secondImage.jpg"
@@ -13,7 +13,7 @@
       </p>
     </div>
   </div>
-  <div class="blog-posts">
+  <div class="blog-posts" [class.dark-theme]="isDarkMode">
     <div class="blog-text">
       <h1 class="mat-display-1">Blogs</h1>
       <h2 class="mat-display-2">Latest Stories and Insights</h2>
@@ -26,16 +26,30 @@
       color="primary"
       *ngIf="isLoading"
     ></mat-spinner>
-    <div class="blog-card" *ngIf="posts.length > 0 && !isLoading">
-      <mat-card class="img-card" appearence="raised" *ngFor="let post of posts">
+    <div
+      class="blog-card"
+      [class.dark-theme]="isDarkMode"
+      [ngClass]="{ 'dark-special': isDarkMode }"
+      *ngIf="posts.length > 0 && !isLoading"
+    >
+      <mat-card
+        class="img-card"
+        [class.dark-theme]="isDarkMode"
+        appearence="raised"
+        *ngFor="let post of posts"
+      >
         <mat-card-header>
           <mat-card-title
-            ><h3 class="mat-display-3">{{ post.title }}</h3></mat-card-title
+            ><h3 class="mat-display-3">
+              {{ post.title }}
+            </h3></mat-card-title
           >
         </mat-card-header>
         <img mat-card-image [src]="post?.imagePath" [alt]="post.title" />
         <mat-card-content>
-          <h3 class="mat-display-3">{{ post.content }}</h3>
+          <h3 class="mat-display-3">
+            {{ post.content }}
+          </h3>
         </mat-card-content>
         <mat-card-actions align="end">
           <button mat-raised-button>see more</button>

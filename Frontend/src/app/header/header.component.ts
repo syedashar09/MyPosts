@@ -11,6 +11,10 @@ import { AuthService } from '../Auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   public userIsAuthenticated: boolean = false;
   private authListnerSubs: Subscription;
+  isNavbarHidden = false;
+  lastScrollTop = 0;
+  scrollThreshold = 100;
+  isDarkMode = false;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -23,11 +27,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((isAuthenticated) => {
         this.userIsAuthenticated = isAuthenticated;
       });
+    const savedTheme = localStorage.getItem('theme');
+    this.isDarkMode = savedTheme === 'dark';
   }
-
-  isNavbarHidden = false;
-  lastScrollTop = 0;
-  scrollThreshold = 100; // Distance to start hiding the navbar
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
@@ -57,5 +59,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.logOutUser();
     console.log('User logOut');
     this.router.navigate(['/']);
+  }
+  toggleTheme(isDark: boolean): void {
+    this.isDarkMode = isDark;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
   }
 }

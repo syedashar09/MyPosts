@@ -1,29 +1,31 @@
 footer {
   left: 0;
-  right: 0;
   bottom: 0;
   width: 100%;
-  margin-top: 20px;
 }
 mat-toolbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  min-height: 120px;
 }
 img.logo {
   width: 65px;
   height: 65px;
   padding: 5px;
-  margin-left: 20px;
 }
 .info {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 span#copy {
-  margin-right: 580px;
+}
+.aboutus {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 div.aboutus img {
   width: 50px;

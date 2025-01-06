@@ -9,6 +9,16 @@
   <span class="spacer"></span>
 
   <ul>
+    <li>
+      <mat-slide-toggle
+        class="theme-toggle"
+        [checked]="isDarkMode"
+        (change)="toggleTheme($event.checked)"
+        color="accent"
+      >
+        {{ isDarkMode ? "Dark Mode" : "Light Mode" }}</mat-slide-toggle
+      >
+    </li>
     <li *ngIf="userIsAuthenticated">
       <a routerLink="/postList" [routerLinkActive]="['routerActive']">
         <div class="links">

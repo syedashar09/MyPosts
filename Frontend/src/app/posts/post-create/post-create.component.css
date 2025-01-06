@@ -1,66 +1,55 @@
-html,
-body {
-  height: 100%;
+.main-div {
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-}
-
-
 mat-card {
   width: 80%;
   margin: auto;
-  margin-top: 50px;
-  justify-content: center;
+  margin-top: 80px;
   display: flex;
-  font-family: monospace;
-  background-color: #CCEA8D;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #683ab7ec;
   border-radius: 10px;
-  box-shadow: 0px 3px 6px -1px rgb(0, 0, 0, 0.4), 0px 5px 15px 0px rgb(0, 0, 0, 0.3), 0px 8px 21px 1.5px rgb(0, 0, 0, 0.2);
+  box-shadow:
+    0px 3px 6px -1px rgb(0, 0, 0, 0.4),
+    0px 5px 15px 0px rgb(0, 0, 0, 0.3),
+    0px 8px 21px 1.5px rgb(0, 0, 0, 0.2);
 }
-
+mat-form-field {
+  margin-left: 35px;
+}
 mat-form-field,
 input,
 textarea {
-  margin-left: 20px;
-  width: 90%;
+  width: 80%;
 }
 
 .Content {
   resize: vertical;
   min-height: 150px;
   max-height: 250px;
-
 }
 
 mat-spinner {
   margin: auto;
-
-
 }
 
 mat-card-title {
   margin: 20px 0px;
-  color: rgb(0, 0, 0, 0.5);
-  margin-left: 20px;
+  margin-left: 45px;
+  color: rgb(255, 255, 255);
 }
 
 .save-button {
-
   margin: 1rem 1rem;
+  margin-left: 30px;
   justify-content: baseline;
   box-shadow: 5px 2px 5px rgb(0, 0, 0, 0.5);
-
-
 }
 
 .uploadBtn {
   background-color: whitesmoke;
   color: rgb(0, 0, 0, 0.5);
   box-shadow: 5px 2px 5px rgb(0, 0, 0, 0.5);
-
 }
 
 /* #button {

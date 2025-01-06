@@ -1,21 +1,16 @@
 .main-div {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 12%;
-  margin-left: 12%;
-  max-height: 80vh;
-  min-height: 80vh;
-  max-width: 60vw;
-  min-width: 80vw;
+  margin-top: 100px;
 }
 mat-card {
   width: 60%;
   margin: auto;
   margin-top: 50px;
   justify-content: center;
-  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #683ab7ec;
   border-radius: 10px;
   box-shadow:
     0px 4px 7px -1px rgb(0, 0, 0, 0.3),
@@ -25,22 +20,26 @@ mat-card {
 
 mat-card-title {
   margin: 20px 0;
-  color: rgb(0, 0, 0, 0.5);
+  /* color: rgb(0, 0, 0, 0.5); */
   margin-left: 20px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 mat-form-field {
-  width: 100%;
+  width: 75%;
   border: none;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 mat-form-field,
 input {
-  width: 75%;
+  width: 60%;
   margin-left: 20px;
 }
 
 button {
   margin: 20px;
+  color: rgb(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
