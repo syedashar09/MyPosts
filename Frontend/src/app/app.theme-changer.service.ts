@@ -1,25 +1,40 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeChangerService {
-  private isDarModeSubject = new BehaviorSubject<boolean>(false);
-  isDarkMode = this.isDarModeSubject.asObservable();
-  setDarkMode(isDarkMode: boolean): void {
-    this.isDarModeSubject.next(isDarkMode);
-    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+  private isDarkMode = new BehaviorSubject<boolean>(false);
+  theme$ = this.isDarkMode.asObservable();
+  private renderer: Renderer2;
+  private currentTheme: string;
 
-    // Update global body class for theme
-    if (isDarkMode) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.remove('dark-theme');
-    }
+  constructor(rendererFactory: RendererFactory2) {
+    this.renderer = rendererFactory.createRenderer(null, null);
+    this.currentTheme = this.loadTheme();
+    this.applyTheme(this.currentTheme);
   }
 
-  getDarkMode(): boolean {
-    return this.isDarModeSubject.value;
+  getCurrentTheme(): string {
+    return this.currentTheme;
+  }
+  applyTheme(theme: string): void {
+    const previousTheme = this.currentTheme;
+    this.renderer.removeClass(document.body, previousTheme);
+    this.renderer.addClass(document.body, theme);
+    this.currentTheme = theme;
+    this.saveTheme(theme);
+  }
+
+  private saveTheme(theme: string): void {
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {
+      console.warn('could not save theme to localStorage:', e);
+    }
+  }
+  private loadTheme(): string {
+    return localStorage.getItem('theme') || 'light-theme';
   }
 }

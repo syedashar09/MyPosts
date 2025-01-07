@@ -13,10 +13,12 @@
       <mat-slide-toggle
         class="theme-toggle"
         [checked]="isDarkMode"
-        (change)="toggleTheme($event.checked)"
-        color="accent"
+        (change)="toggleTheme()"
+        color="warn"
       >
-        {{ isDarkMode ? "Dark Mode" : "Light Mode" }}</mat-slide-toggle
+        <span class="mat-body-2">{{
+          isDarkMode ? "Dark Mode" : "Light Mode"
+        }}</span></mat-slide-toggle
       >
     </li>
     <li *ngIf="userIsAuthenticated">

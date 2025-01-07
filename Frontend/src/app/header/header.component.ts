@@ -1,7 +1,8 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AuthService } from '../Auth/auth.service';
+import { ThemeChangerService } from '../app.theme-changer.service';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,15 @@ import { AuthService } from '../Auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   public userIsAuthenticated: boolean = false;
   private authListnerSubs: Subscription;
+
   isNavbarHidden = false;
   lastScrollTop = 0;
   scrollThreshold = 100;
-  isDarkMode = false;
+  isDarkMode: boolean = false;
   constructor(
     private authService: AuthService,
     private router: Router,
+    private themeService: ThemeChangerService,
   ) {}
 
   ngOnInit(): void {
@@ -27,8 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((isAuthenticated) => {
         this.userIsAuthenticated = isAuthenticated;
       });
-    const savedTheme = localStorage.getItem('theme');
-    this.isDarkMode = savedTheme === 'dark';
+    this.isDarkMode = this.themeService.getCurrentTheme() === 'dark-theme';
   }
 
   @HostListener('window:scroll', [])
@@ -51,6 +53,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.lastScrollTop = currentScroll;
   }
 
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    const theme = this.isDarkMode ? 'dark-theme' : 'light-theme';
+    this.themeService.applyTheme(theme);
+  }
   ngOnDestroy(): void {
     this.authListnerSubs.unsubscribe();
   }
@@ -59,9 +66,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.logOutUser();
     console.log('User logOut');
     this.router.navigate(['/']);
-  }
-  toggleTheme(isDark: boolean): void {
-    this.isDarkMode = isDark;
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
   }
 }

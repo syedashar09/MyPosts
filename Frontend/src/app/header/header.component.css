@@ -69,6 +69,9 @@ div.links {
   opacity: 0;
   filter: blur(3px);
 }
+mat-slide-toggle {
+  color: white;
+}
 /* .header.opacity {
   filter: opacity(20%);
 } */

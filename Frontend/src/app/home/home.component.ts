@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { postsService } from '../posts/posts.service';
 import { post } from '../posts/post.model';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { ThemeChangerService } from '../app.theme-changer.service';
 
 @Component({
@@ -15,10 +15,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   private postSub: Subscription;
   totalPosts: number;
   isDarkMode: boolean;
-
   constructor(
     private postService: postsService,
-    private themeChanger: ThemeChangerService,
+    private themeService: ThemeChangerService,
   ) {}
 
   ngOnInit(): void {
@@ -31,9 +30,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.posts = postData.posts;
         this.totalPosts = postData.postCount;
       });
-
-    const savedTheme = localStorage.getItem('isDarkMode') === 'true';
-    this.themeChanger.setDarkMode(savedTheme);
+    this.themeService.theme$.subscribe((theme) => {
+      this.isDarkMode = theme;
+      console.log(this.isDarkMode);
+    });
   }
   ngOnDestroy(): void {
     this.postSub.unsubscribe();

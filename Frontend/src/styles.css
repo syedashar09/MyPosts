@@ -51,3 +51,26 @@ span.mat-body-2 {
   letter-spacing: 0.1rem;
   font-family: "Rakkas";
 }
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+  transition:
+    background-color 0.5s ease-in,
+    color 0.3s ease-in;
+}
+.dark-theme mat-card,
+.dark-theme mat-expansion-panel {
+  background-color: #121212;
+  color: #ffffff;
+  transition:
+    background-color 0.5s ease-in,
+    color 0.3s ease-in;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #121212;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.3s ease-out;
+}
